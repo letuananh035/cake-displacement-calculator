@@ -1,32 +1,46 @@
 # Cylinder Rice Displacement - Cake Volume Calculator
 
-An interactive, responsive scientific web application designed to calculate and simulate the displacement volume, height change ($\Delta h = h_{\text{sau}} - 50\text{ cm}$), apparent density ($\rho$), and specific volume ($v$) of 10 cakes placed in a cylindrical measuring vessel filled with rice.
+An interactive, responsive scientific web application designed to calculate and simulate the displacement volume, height change, apparent density ($\rho$), and specific volume ($v$) of 10 cakes placed in a cylindrical measuring vessel filled with rice.
 
-## 🔬 Mathematical Physics Formulation
+## 🔬 Experimental Setup & Mathematical Physics
 
-### Cylinder Parameters
-- **Total Cylinder Height ($H$):** $100.0\text{ cm}$
+### Cylinder Specifications
+- **Total Cylinder Height ($H$):** $80.0\text{ cm}$
 - **Inner Radius ($R$):** $9.37\text{ cm}$
 - **Cross-Sectional Base Area ($A$):**
   $$A = \pi \times R^2 = \pi \times (9.37)^2 \approx 275.8234\text{ cm}^2$$
-- **Initial Rice Level ($h_0$):** $50.0\text{ cm}$
-- **Initial Rice Volume ($V_0$):**
-  $$V_0 = A \times h_0 \approx 275.8234 \times 50 \approx 13{,}791.17\text{ cm}^3 \approx 13.79\text{ L}$$
+- **Initial Rice Level ($h_0$):** $35.0\text{ cm}$
+- **Initial Rice Volume ($V_{\text{rice}}$):**
+  $$V_{\text{rice}} = A \times 35.0 \approx 275.8234 \times 35 \approx 9{,}653.82\text{ cm}^3 \approx 9.65\text{ L}$$
+- **Reference Green Benchmark Line ($h_{\text{green}}$):** $50.0\text{ cm}$
+- **Base Volume to Green Mark:**
+  $$V_{\text{to\_green}} = A \times (50 - 35) = 275.8234 \times 15.0 \approx 4{,}137.35\text{ cm}^3$$
 
-### Rice Displacement Principle
-After placing 10 cakes into the cylinder and inverting/tapping the container, the rice grains flow and pack around the cakes:
-- **Final Measured Height:** $h_{\text{sau}}\text{ (cm)}$
-- **Height Displacement:**
-  $$\Delta h = h_{\text{sau}} - h_0 = h_{\text{sau}} - 50\text{ cm}$$
-- **Total Experimental Volume of the 10 Cakes ($V_{\text{total}}$):**
-  $$V_{\text{total}} = A \times \Delta h = \pi \times R^2 \times (h_{\text{sau}} - 50)$$
-- **Theoretical Height Prediction from Geometric Volume ($V_{\text{geo}}$):**
-  $$h_{\text{sau, predicted}} = 50 + \frac{\sum_{i=1}^{10} V_i}{A} = 50 + \frac{V_{\text{geo}}}{275.8234}$$
+---
 
-### Quality & Aeration Indicators
-- **Total Mass:** $M_{\text{total}} = \sum_{i=1}^{10} m_i\text{ (g)}$
-- **Apparent Bulk Density:** $\rho = \frac{M_{\text{total}}}{V_{\text{total}}}\text{ (g/cm}^3)$
-- **Specific Volume:** $v = \frac{V_{\text{total}}}{M_{\text{total}}}\text{ (cm}^3\text{/g)}$ *(Standard bakery expansion index)*
+### Rice Displacement & Green Benchmark Formula
+After placing 10 cakes into the cylinder and inverting the container, rice redistributes around the cakes:
+- **Final Measured Rice Level:** $h_{\text{sau}}\text{ (cm)}$
+- **Height Relative to the Green Mark:**
+  $$\Delta h_{\text{green}} = h_{\text{sau}} - 50.0\text{ cm}$$
+  *(Positive when above green mark, negative when below)*
+- **Total Height Rise from Initial Rice (35cm):**
+  $$\Delta h_{\text{total}} = h_{\text{sau}} - 35.0\text{ cm} = 15.0\text{ cm} + \Delta h_{\text{green}}$$
+- **Total Cake Volume ($V_{\text{cakes}}$):**
+  $$V = A \times \Delta h_{\text{total}} = A \times (h_{\text{sau}} - 35.0\text{ cm}) = 275.8234 \times (15.0 + \Delta h_{\text{green}})$$
+  Or equivalently:
+  $$V = 4{,}137.35 + 275.8234 \times \Delta h_{\text{green}}\text{ (cm}^3\text{)}$$
+
+---
+
+### Theoretical Prediction from 10 Cakes
+When cake dimensions are known ($V_{\text{geo}} = \sum_{i=1}^{10} V_i$):
+- **Predicted Total Height Rise:**
+  $$\Delta h_{\text{total, predicted}} = \frac{V_{\text{geo}}}{A} = \frac{V_{\text{geo}}}{275.8234}\text{ cm}$$
+- **Predicted Final Rice Level:**
+  $$h_{\text{sau, predicted}} = 35.0 + \Delta h_{\text{total, predicted}}\text{ cm}$$
+- **Predicted Distance Relative to Green Mark (50cm):**
+  $$\Delta h_{\text{green, predicted}} = h_{\text{sau, predicted}} - 50.0\text{ cm} = \frac{V_{\text{geo}}}{275.8234} - 15.0\text{ cm}$$
 
 ---
 
@@ -42,28 +56,6 @@ After placing 10 cakes into the cylinder and inverting/tapping the container, th
 
 ---
 
-## 🚀 Key Features
-
-- **Interactive 2D Visualizer:** Realistic 100cm cylinder model with 1mm/1cm graduated ticks, rice texture fill, submerged cake icons, and dynamic level lines.
-- **Dual Calculation Modes:**
-  - *Mode 1 (Experimental Displacement):* Enter observed $h_{\text{sau}} \to$ calculates $\Delta h$ and displaced volume $V$.
-  - *Mode 2 (Geometric Prediction):* Enter dimensions for 10 cakes $\to$ predicts $h_{\text{sau}}$ and compares with actual reading.
-- **10-Cake Input Grid:** Full table with per-cake shape selector, dimensional parameters, mass input, live individual volume $V_i$, and individual density $\rho_i$.
-- **Preloaded Presets:** Instant loading for 10 Muffins, 10 Sandwich Breads, 10 Bánh Bao, 10 Donuts, or 10 Mixed Pastries.
-- **Data Export & Reporting:**
-  - Export experiment datasets as CSV.
-  - Printable laboratory report layout with signature boxes.
-- **Zero-Dependency Static Project:** Runs directly in any web browser or via GitHub Pages.
-
----
-
-## 🛠️ Usage
-
-### Quick Local Run
-Simply open `index.html` in any modern web browser, or run via PowerShell:
-```powershell
-Start-Process index.html
-```
-
-### GitHub Pages Deployment
-This repository is configured to deploy directly to GitHub Pages from the `main` branch.
+## 🚀 Live Access
+- **GitHub Pages:** [https://letuananh035.github.io/cake-calculator/](https://letuananh035.github.io/cake-calculator/)
+- **Repository:** [https://github.com/letuananh035/cake-displacement-calculator](https://github.com/letuananh035/cake-displacement-calculator)
