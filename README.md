@@ -68,6 +68,9 @@ $$\text{Tổng thể tích: } V_{\text{geo}} = \sum_{i=1}^{10} V_i\text{ cm}^3$$
 ---
 
 ## 🏷️ Version History
+- **v2.7.1 (2026-10-01):**
+  - **Khắc phục lỗi SyntaxError:** Loại bỏ đoạn mã HTML thừa trong hàm sinh input kích thước khiến JavaScript bị chặn thực thi.
+  - **Đồng bộ thời gian thực:** Thêm tính năng cập nhật trực tiếp $V_i$ và $\rho$ trên từng dòng bảng và thẻ mobile ngay khi người dùng gõ phím mà không bị mất focus.
 - **v2.7.0 (2026-10-01):**
   - **Chuẩn hóa mốc vạch xanh 50.0 cm:** Khi không có bánh, lật ngược ống thì gạo đạt đúng vạch xanh $50.0\text{ cm}$. Mọi độ dâng $\Delta h_{\text{xanh}}$ tính từ mốc $50.0\text{ cm}$.
   - **Mô hình 10 bánh chỏm cầu:** Chuẩn hóa nhập thông số theo $D$ (mm), $h$ (mm), và $m$ (g).
