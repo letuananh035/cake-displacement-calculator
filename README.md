@@ -12,35 +12,35 @@ An interactive, responsive scientific web application designed to calculate and 
 - **Initial Rice Level ($h_0$):** $30.0\text{ cm}$
 - **Initial Rice Volume ($V_{\text{rice}}$):**
   $$V_{\text{rice}} = A \times 30.0 \approx 275.8234 \times 30 \approx 8{,}274.70\text{ cm}^3 \approx 8.27\text{ L}$$
-- **Reference Green Benchmark Line ($h_{\text{green}}$):** $50.0\text{ cm}$
-- **Base Volume to Green Mark:**
-  $$V_{\text{to\_green}} = A \times (50 - 30) = 275.8234 \times 20.0 \approx 5{,}516.47\text{ cm}^3$$
+- **Original Green Benchmark Line (Before flip):** $50.0\text{ cm}$ from bottom (exactly $80.0 - 50.0 = 30.0\text{ cm}$ from top).
 
 ---
 
-### Rice Displacement & Green Benchmark Formula
-After placing 10 cakes into the cylinder and inverting the container, rice redistributes around the cakes:
-- **Final Measured Rice Level:** $h_{\text{sau}}\text{ (cm)}$
-- **Height Relative to the Green Mark:**
-  $$\Delta h_{\text{green}} = h_{\text{sau}} - 50.0\text{ cm}$$
-  *(Positive when above green mark, negative when below)*
-- **Total Height Rise from Initial Rice (30cm):**
-  $$\Delta h_{\text{total}} = h_{\text{sau}} - 30.0\text{ cm} = 20.0\text{ cm} + \Delta h_{\text{green}}$$
-- **Total Cake Volume ($V_{\text{cakes}}$):**
-  $$V = A \times \Delta h_{\text{total}} = A \times (h_{\text{sau}} - 30.0\text{ cm}) = 275.8234 \times (20.0 + \Delta h_{\text{green}})$$
-  Or equivalently:
-  $$V = 5{,}516.47 + 275.8234 \times \Delta h_{\text{green}}\text{ (cm}^3\text{)}$$
+### 🔄 The 180° Cylinder Inversion Principle
+1. **Before Inverting (Ống xuôi ban đầu):**
+   - $30.0\text{ cm}$ of rice sits at the base ($0\to 30\text{ cm}$).
+   - The green benchmark is drawn at $50.0\text{ cm}$ (which is exactly $30.0\text{ cm}$ below the open top).
+   - 10 cakes are inserted above the rice layer.
+2. **Inverting 180° (Lật ngược ống đong):**
+   - The open top becomes the new base ($0\text{ cm}$).
+   - The green benchmark, which was $30.0\text{ cm}$ from the old top, now sits at exactly **$30.0\text{ cm}$ from the new base**!
+3. **Perfect Coincidence with Initial Rice:**
+   - Since $30.0\text{ cm}$ of rice was poured in, the base rice volume fills up to exactly **$30.0\text{ cm}$ (the flipped green line)**.
+   - Therefore, **the green mark after inverting coincides with the initial rice level ($30.0\text{ cm}$)**!
+4. **Volume Measurement Formula:**
+   - When 10 cakes are embedded, rice rises to $h_{\text{sau}}$ above the flipped green mark ($30.0\text{ cm}$):
+     $$\Delta h_{\text{green}} = h_{\text{sau}} - 30.0\text{ cm}$$
+   - The displaced volume of the 10 cakes is directly:
+     $$V = A \times \Delta h_{\text{green}} = 275.8234 \times \Delta h_{\text{green}}\text{ cm}^3$$
 
 ---
 
 ### Theoretical Prediction from 10 Cakes
 When cake dimensions are known ($V_{\text{geo}} = \sum_{i=1}^{10} V_i$):
-- **Predicted Total Height Rise:**
-  $$\Delta h_{\text{total, predicted}} = \frac{V_{\text{geo}}}{A} = \frac{V_{\text{geo}}}{275.8234}\text{ cm}$$
+- **Predicted Height Rise Above Green Mark:**
+  $$\Delta h_{\text{green, predicted}} = \frac{V_{\text{geo}}}{A} = \frac{V_{\text{geo}}}{275.8234}\text{ cm}$$
 - **Predicted Final Rice Level:**
-  $$h_{\text{sau, predicted}} = 30.0 + \Delta h_{\text{total, predicted}}\text{ cm}$$
-- **Predicted Distance Relative to Green Mark (50cm):**
-  $$\Delta h_{\text{green, predicted}} = h_{\text{sau, predicted}} - 50.0\text{ cm} = \frac{V_{\text{geo}}}{275.8234} - 20.0\text{ cm}$$
+  $$h_{\text{sau, predicted}} = 30.0 + \Delta h_{\text{green, predicted}}\text{ cm}$$
 
 ---
 
@@ -64,9 +64,12 @@ When cake dimensions are known ($V_{\text{geo}} = \sum_{i=1}^{10} V_i$):
 ---
 
 ## 🏷️ Version History
+- **v2.6.0 (2026-10-01):**
+  - **180° Cylinder Inversion Simulation:** Added interactive button to toggle between Before-Inversion (original upright cylinder) and After-Inversion (180° inverted cylinder).
+  - **Standardized Green Benchmark:** Clarified that the green mark at 50cm (30cm from top) flips to exactly **30.0cm** from the new base, coinciding with initial rice level ($h_0 = 30.0\text{ cm}$).
+  - **Direct Volume Formula:** $V = A \times \Delta h_{\text{green}} = 275.8234 \times \Delta h_{\text{green}}\text{ cm}^3$.
+  - Updated visual cylinder graphics with flipped/unflipped states, dynamic rulers, and updated printed report / CSV export.
 - **v2.5.0 (2026-10-01):**
   - Updated initial rice level $h_0 = 30.0\text{ cm}$.
-  - Reference green mark offset is $20.0\text{ cm}$ ($V_{\text{to\_green}} = 5{,}516.47\text{ cm}^3$).
   - Added Spherical Cap (Chỏm Cầu / Vòm) geometry calculation.
-  - Added prominent visible version indicator, release modal, and one-tap cache-clearing reload button.
-  - Added version tagging to exported CSV and printed lab report.
+  - Added visible version badge, release info modal, and one-tap cache-clearing reload button.
