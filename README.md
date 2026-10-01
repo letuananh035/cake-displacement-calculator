@@ -60,3 +60,13 @@ When cake dimensions are known ($V_{\text{geo}} = \sum_{i=1}^{10} V_i$):
 ## 🚀 Live Access
 - **GitHub Pages:** [https://letuananh035.github.io/cake-calculator/](https://letuananh035.github.io/cake-calculator/)
 - **Repository:** [https://github.com/letuananh035/cake-displacement-calculator](https://github.com/letuananh035/cake-displacement-calculator)
+
+---
+
+## 🏷️ Version History
+- **v2.5.0 (2026-10-01):**
+  - Updated initial rice level $h_0 = 30.0\text{ cm}$.
+  - Reference green mark offset is $20.0\text{ cm}$ ($V_{\text{to\_green}} = 5{,}516.47\text{ cm}^3$).
+  - Added Spherical Cap (Chỏm Cầu / Vòm) geometry calculation.
+  - Added prominent visible version indicator, release modal, and one-tap cache-clearing reload button.
+  - Added version tagging to exported CSV and printed lab report.
