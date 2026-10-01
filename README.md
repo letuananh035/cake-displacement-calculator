@@ -48,11 +48,12 @@ When cake dimensions are known ($V_{\text{geo}} = \sum_{i=1}^{10} V_i$):
 
 1. **Rectangular Cuboid (Bánh hộp chữ nhật / Sandwich):** $V = L \times W \times H$
 2. **Cylinder (Bánh tròn dẹt / Bánh kem tròn):** $V = \pi \times (D/2)^2 \times H$
-3. **Muffin / Cupcake (Hình nón cụt):** $V = \frac{1}{3} \pi H (r_1^2 + r_2^2 + r_1 r_2)$
-4. **Sphere (Hình cầu / Bánh bao, bánh tròn):** $V = \frac{4}{3} \pi (D/2)^3$
-5. **Donut / Torus (Hình xuyến):** $V = 2\pi^2 R_{\text{major}} r_{\text{tube}}^2$
-6. **Ellipsoid (Hình bầu dục / Bánh mì dài):** $V = \frac{4}{3}\pi \frac{a}{2}\frac{b}{2}\frac{c}{2}$
-7. **Custom:** Direct volume entry for complex molds
+3. **Spherical Cap / Dome (Bánh chỏm cầu / Mousse vòm):** $V = \frac{1}{6} \pi h \left(3 \left(\frac{D}{2}\right)^2 + h^2\right)$
+4. **Muffin / Cupcake (Hình nón cụt):** $V = \frac{1}{3} \pi H (r_1^2 + r_2^2 + r_1 r_2)$
+5. **Sphere (Hình cầu / Bánh bao, bánh tròn):** $V = \frac{4}{3} \pi (D/2)^3$
+6. **Donut / Torus (Hình xuyến):** $V = 2\pi^2 R_{\text{major}} r_{\text{tube}}^2$
+7. **Ellipsoid (Hình bầu dục / Bánh mì dài):** $V = \frac{4}{3}\pi \frac{a}{2}\frac{b}{2}\frac{c}{2}$
+8. **Custom:** Direct volume entry for complex molds
 
 ---
 
