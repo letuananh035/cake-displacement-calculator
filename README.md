@@ -9,12 +9,12 @@ An interactive, responsive scientific web application designed to calculate and 
 - **Inner Radius ($R$):** $9.37\text{ cm}$
 - **Cross-Sectional Base Area ($A$):**
   $$A = \pi \times R^2 = \pi \times (9.37)^2 \approx 275.8234\text{ cm}^2$$
-- **Initial Rice Level ($h_0$):** $35.0\text{ cm}$
+- **Initial Rice Level ($h_0$):** $30.0\text{ cm}$
 - **Initial Rice Volume ($V_{\text{rice}}$):**
-  $$V_{\text{rice}} = A \times 35.0 \approx 275.8234 \times 35 \approx 9{,}653.82\text{ cm}^3 \approx 9.65\text{ L}$$
+  $$V_{\text{rice}} = A \times 30.0 \approx 275.8234 \times 30 \approx 8{,}274.70\text{ cm}^3 \approx 8.27\text{ L}$$
 - **Reference Green Benchmark Line ($h_{\text{green}}$):** $50.0\text{ cm}$
 - **Base Volume to Green Mark:**
-  $$V_{\text{to\_green}} = A \times (50 - 35) = 275.8234 \times 15.0 \approx 4{,}137.35\text{ cm}^3$$
+  $$V_{\text{to\_green}} = A \times (50 - 30) = 275.8234 \times 20.0 \approx 5{,}516.47\text{ cm}^3$$
 
 ---
 
@@ -24,12 +24,12 @@ After placing 10 cakes into the cylinder and inverting the container, rice redis
 - **Height Relative to the Green Mark:**
   $$\Delta h_{\text{green}} = h_{\text{sau}} - 50.0\text{ cm}$$
   *(Positive when above green mark, negative when below)*
-- **Total Height Rise from Initial Rice (35cm):**
-  $$\Delta h_{\text{total}} = h_{\text{sau}} - 35.0\text{ cm} = 15.0\text{ cm} + \Delta h_{\text{green}}$$
+- **Total Height Rise from Initial Rice (30cm):**
+  $$\Delta h_{\text{total}} = h_{\text{sau}} - 30.0\text{ cm} = 20.0\text{ cm} + \Delta h_{\text{green}}$$
 - **Total Cake Volume ($V_{\text{cakes}}$):**
-  $$V = A \times \Delta h_{\text{total}} = A \times (h_{\text{sau}} - 35.0\text{ cm}) = 275.8234 \times (15.0 + \Delta h_{\text{green}})$$
+  $$V = A \times \Delta h_{\text{total}} = A \times (h_{\text{sau}} - 30.0\text{ cm}) = 275.8234 \times (20.0 + \Delta h_{\text{green}})$$
   Or equivalently:
-  $$V = 4{,}137.35 + 275.8234 \times \Delta h_{\text{green}}\text{ (cm}^3\text{)}$$
+  $$V = 5{,}516.47 + 275.8234 \times \Delta h_{\text{green}}\text{ (cm}^3\text{)}$$
 
 ---
 
@@ -38,9 +38,9 @@ When cake dimensions are known ($V_{\text{geo}} = \sum_{i=1}^{10} V_i$):
 - **Predicted Total Height Rise:**
   $$\Delta h_{\text{total, predicted}} = \frac{V_{\text{geo}}}{A} = \frac{V_{\text{geo}}}{275.8234}\text{ cm}$$
 - **Predicted Final Rice Level:**
-  $$h_{\text{sau, predicted}} = 35.0 + \Delta h_{\text{total, predicted}}\text{ cm}$$
+  $$h_{\text{sau, predicted}} = 30.0 + \Delta h_{\text{total, predicted}}\text{ cm}$$
 - **Predicted Distance Relative to Green Mark (50cm):**
-  $$\Delta h_{\text{green, predicted}} = h_{\text{sau, predicted}} - 50.0\text{ cm} = \frac{V_{\text{geo}}}{275.8234} - 15.0\text{ cm}$$
+  $$\Delta h_{\text{green, predicted}} = h_{\text{sau, predicted}} - 50.0\text{ cm} = \frac{V_{\text{geo}}}{275.8234} - 20.0\text{ cm}$$
 
 ---
 
