@@ -67,7 +67,28 @@ $$\text{Tổng thể tích: } V_{\text{geo}} = \sum_{i=1}^{10} V_i\text{ cm}^3$$
 
 ---
 
+## 📂 Project Architecture
+
+```
+cake-displacement-calculator/
+├── index.html            # Semantic HTML layout and responsive components (~770 lines)
+├── css/
+│   └── style.css         # Typography, textures, slider and print styles (~70 lines)
+├── js/
+│   ├── config.js         # Constants, cylinder geometry, presets, and state (~85 lines)
+│   ├── calculations.js   # Physical formulas for cylinder and all cake geometries (~70 lines)
+│   ├── visualizer.js     # 2D interactive cylinder rendering, ruler, and animations (~105 lines)
+│   ├── table.js          # Table rows, mobile cards, and dimension inputs (~180 lines)
+│   └── app.js            # Main controller, sync logic, CSV export, and lifecycle (~240 lines)
+└── README.md             # Scientific documentation & user manual
+```
+
+---
+
 ## 🏷️ Version History
+- **v2.8.0 (2026-10-01):**
+  - **Modular Architecture Refactoring:** Tách nhỏ file `index.html` (1,750+ dòng) thành các file độc lập gọn gàng: `css/style.css`, `js/config.js`, `js/calculations.js`, `js/visualizer.js`, `js/table.js`, `js/app.js`.
+  - Cải thiện đáng kể tính tiện dụng, dễ bảo trì, dễ sửa đổi và kiểm thử.
 - **v2.7.1 (2026-10-01):**
   - **Khắc phục lỗi SyntaxError:** Loại bỏ đoạn mã HTML thừa trong hàm sinh input kích thước khiến JavaScript bị chặn thực thi.
   - **Đồng bộ thời gian thực:** Thêm tính năng cập nhật trực tiếp $V_i$ và $\rho$ trên từng dòng bảng và thẻ mobile ngay khi người dùng gõ phím mà không bị mất focus.
